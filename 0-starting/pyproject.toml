@@ -1,0 +1,10 @@
+[project]
+name = "0-starting"
+version = "0.1.0"
+description = "Learn the basics of python"
+requires-python = ">=3.10"
+dependencies = [
+    "flake8>=7.3.0",
+    "pip>=26.0.1",
+    "tqdm>=4.67.3",
+]
