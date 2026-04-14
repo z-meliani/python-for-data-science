@@ -10,5 +10,5 @@ except AssertionError as e:
     print(f"AssertionError: {e}\n")
     sys.exit(1)
 except ValueError:
-    print(f"AssertionError: argument is not an integer\n")
+    print("AssertionError: argument is not an integer\n")
     sys.exit(1)
