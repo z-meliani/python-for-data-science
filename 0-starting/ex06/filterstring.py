@@ -17,7 +17,7 @@ def check_argv() -> list:
         lst_s = [s.isalpha() for s in sys.argv[1].split()]
         for s in lst_s:
             assert s
-    except (AssertionError, TypeError):
+    except Exception:
         print("AssertionError: the arguments are bad")
         sys.exit(1)
 

@@ -15,7 +15,7 @@ def ft_tqdm(lst: range) -> None:
     for i, value in enumerate(lst):
         yield i, value
         i += 1
-        percent = f"{int(i*100/lst_size):3d}%"
+        percent = f"{int(i * 100 / lst_size):3d}%"
         progress = f"{i}/{lst_size}"
         timer = "[00:00<00:00, 000.00it/s]"
         bar_with = width - len(percent) - len(progress) - len(timer) - 3

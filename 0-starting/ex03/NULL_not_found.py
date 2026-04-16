@@ -1,4 +1,3 @@
-
 def NULL_not_found(object: any) -> int:
     name = 0
 
@@ -11,12 +10,13 @@ def NULL_not_found(object: any) -> int:
             name = "Zero"
         case "":
             name = "Empty"
-        case _ if (isinstance(object, float) and object != object):
+        case _ if isinstance(object, float) and object != object:
             name = "Cheese"
 
     if name:
         print(f"{name}: {object} {type(object)}")
-    else:
-        print("Type not Found")
+        return 0
+
+    print("Type not Found")
 
     return 1

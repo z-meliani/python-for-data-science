@@ -19,8 +19,8 @@ def check_argv(argv: str) -> int:
 
 def get_string(argc: int) -> str:
     """
-        Get a string passed as an argument.
-        I no one is provided, prompt for one in stdin.
+    Get a string passed as an argument.
+    I no one is provided, prompt for one in stdin.
     """
 
     if argc == 1:
@@ -37,7 +37,10 @@ def count_char(string: str) -> dict:
     Return a dictionary with the number element for each type.
     """
 
-    count = {"upper": 0, "lower": 0, "mark": 0, "space": 0, "digit": 0}
+    count = {"upper": 0, "lower": 0, "mark": 0, "space": 0, "digit": 0,
+             "other": 0}
+
+    marks = {".", "?", "!", ",", ";", ":", '"', "'", "(", ")", "[", "]", "-"}
 
     for char in string:
         match char:
@@ -45,18 +48,21 @@ def count_char(string: str) -> dict:
                 count["upper"] += 1
             case ch if ch.islower():
                 count["lower"] += 1
-            case '.' | ',' | ';' | ':' | '!' | '?':
+            case ch if ch in marks:
                 count["mark"] += 1
             case ch if ch.isspace():
                 count["space"] += 1
             case ch if ch.isdigit():
                 count["digit"] += 1
+            case _:
+                count["other"] += 1
 
     return count
 
 
 def print_summary(func):
     """Wrap the function count_char to print a formatted summary."""
+
     def wrapper(text: str) -> dict:
         counts = func(text)
         total = sum(counts.values())
@@ -67,6 +73,7 @@ def print_summary(func):
         print(f"{counts['space']} spaces")
         print(f"{counts['digit']} digits")
         return counts
+
     return wrapper
 
 
