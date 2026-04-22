@@ -8,3 +8,6 @@ dependencies = [
     "pip>=26.0.1",
     "tqdm>=4.67.3",
 ]
+
+[tool.setuptools]
+packages = []
