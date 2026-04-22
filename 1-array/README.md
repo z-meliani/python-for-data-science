@@ -38,11 +38,8 @@ python3 -m venv .venv
 # Activate the virtual environment
 source .venv/bin/activate
 
-# Upgrade pip
-python -m pip install --upgrade pip
-
 # Install dependencies from pyproject.toml
-pip install -e .
+python3 -m pip install -r requirements.txt
 
 ```
 
