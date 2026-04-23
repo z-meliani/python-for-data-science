@@ -1,0 +1,15 @@
+[project]
+name = "2-data-table"
+version = "0.1.0"
+description = "Dataframe manipulation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flake8>=7.3.0",
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
+]
+
+
+[tool.setuptools]
+packages = []
