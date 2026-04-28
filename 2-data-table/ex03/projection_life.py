@@ -39,7 +39,12 @@ def main():
         }
 
     df_income = load(f"../data/{file['income']}")
+    if df_income is None:
+        return 1
+
     df_life = load(f"../data/{file['life']}")
+    if df_life is None:
+        return 1
 
     # Keep columns "country" an "1900"
     df_income = df_income.loc[..., ["country", "1900"]]

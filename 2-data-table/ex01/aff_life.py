@@ -5,6 +5,9 @@ from load_csv import load
 def main():
     # Load the dataset
     df = load("../data/life_expectancy_years.csv")
+    if df is None:
+        return 1
+
     df_france = df.loc[df.country == "France"].drop(columns=["country"])
 
     # Convert columns to numpy arrays

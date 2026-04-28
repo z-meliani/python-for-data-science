@@ -68,9 +68,9 @@ def ft_grey(array) -> np.array:
     try:
         res = np.array(array, dtype=float)
 
-        res = np.dot(res[..., :], [0.299, 0.587, 0.114]).astype(int)
+        res = np.sum((res / 3), axis=2).astype(int)
 
-        res = np.stack((res,)*3, axis=2)
+        res = np.stack([res, res, res], axis=2)
 
     except Exception as e:
         print(f"Error: {e}")

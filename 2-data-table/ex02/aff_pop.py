@@ -27,6 +27,8 @@ def magnitude(x, pos):
 def main():
     # Load the dataset
     df = load("../data/population_total.csv")
+    if df is None:
+        return 1
 
     # Keep data for France and Belgium an transpose the dataframe
     df = df.loc[df.country.isin(["France", "Belgium"])].T
